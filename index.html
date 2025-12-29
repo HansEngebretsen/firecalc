@@ -1,0 +1,1069 @@
+<html lang="en"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Interactive FIRE Calculator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Inter:wght@400;500;600;800&amp;display=swap" rel="stylesheet">
+<style>
+    :root {
+      --bg-dark: #09090b;
+      --bg-card: #121214;
+      --border-color: #27272a;
+      --accent-yellow: #facc15;
+      --accent-green: #4ade80;
+      --accent-blue: #60a5fa;
+      --text-muted: #71717a;
+      --text-main: #e4e4e7;
+      interpolate-size: allow-keywords; 
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      user-select: none;
+    }
+
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Inputs */
+    .desktop-input-group {
+      background-color: transparent; 
+      border: 1px solid #3f3f46;
+      border-radius: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: baseline;
+      transition: border-color 0.2s;
+    }
+    .desktop-input-group:focus-within { border-color: var(--accent-yellow); }
+    .desktop-input-group:hover { border-color: #71717a; }
+
+    .input-field {
+      background: transparent;
+      border: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      outline: none;
+      width: 100%;
+      cursor: ew-resize;
+      color: var(--accent-yellow);
+    }
+    
+    .input-field.calculated { color: #e4e4e7; cursor: default; }
+    .desktop-input-group.calculated-group { border-color: #27272a; }
+
+    /* Range Sliders */
+    input[type="range"].standard-range {
+      -webkit-appearance: none; background: transparent; width: 100%; cursor: pointer;
+    }
+    input[type="range"].standard-range::-webkit-slider-thumb {
+      -webkit-appearance: none; height: 14px; width: 14px; border-radius: 50%;
+      background: var(--accent-yellow); margin-top: -5px; box-shadow: 0 0 0 2px var(--bg-dark);
+      transition: transform 0.1s;
+    }
+    input[type="range"].standard-range::-webkit-slider-runnable-track {
+      width: 100%; height: 4px; background: #3f3f46; border-radius: 2px;
+    }
+
+    /* Graph */
+    .timeline-wrapper { display: flex; height: 100%; width: 100%; }
+    .y-axis { 
+      display: flex; flex-direction: column; justify-content: space-between; 
+      padding-right: 8px; text-align: right; color: #52525b; 
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; min-width: 40px;
+    }
+    .timeline-container { position: relative; flex-grow: 1; border-left: 1px solid #27272a; border-bottom: 1px solid #27272a; }
+    .timeline-grid { display: flex; align-items: flex-end; height: 100%; gap: 1px; }
+    .timeline-bar {
+      flex: 1; background: #27272a; border-radius: 1px 1px 0 0;
+      transition: height 0.3s ease, background-color 0.3s; position: relative;
+    }
+    /* Hover logic handled via JS for state management */
+    
+    /* Progress Bar */
+    .progress-track { background: #27272a; border-radius: 999px; overflow: hidden; height: 8px; }
+    .progress-fill {
+      background: var(--accent-green); height: 100%; border-radius: 999px; width: 0%;
+      transition: width 0.5s ease-out; box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+    }
+
+    /* Graph Tooltip */
+    #graphTooltip {
+      pointer-events: none; position: absolute; background: #18181b;
+      border: 1px solid #3f3f46; padding: 8px 12px; border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; z-index: 50;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); opacity: 0;
+      transition: opacity 0.2s; transform: translate(-50%, -100%); margin-top: -10px;
+      white-space: nowrap;
+    }
+    
+    /* Info Tooltip */
+    .info-tooltip {
+      position: absolute;
+      background: #18181b;
+      border: 1px solid #3f3f46;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      line-height: 1.4;
+      color: #d4d4d8;
+      z-index: 100;
+      width: 280px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s, visibility 0.2s;
+      transform: translateX(-50%);
+    }
+    .info-tooltip.active { visibility: visible; opacity: 1; }
+    .info-tooltip a { color: var(--accent-yellow); text-decoration: underline; }
+
+    /* Pie Chart */
+    .chart-circle { fill: none; stroke-width: 3; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dasharray 0.5s ease; }
+    .chart-bg { stroke: #27272a; }
+    .chart-fill { stroke: var(--accent-yellow); } 
+    
+    /* Headers */
+    .section-header {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: #a1a1aa; font-weight: 800; margin-bottom: 1.5rem; margin-top: 0.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-header::after { content: ''; flex-grow: 1; height: 1px; background: #27272a; }
+    .stat-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text-muted); font-weight: 700; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 4px;
+    }
+    .calc-subtext { 
+        font-size: 0.6rem; color: #71717a; margin-top: 0.35rem; 
+        min-height: 1rem; font-family: 'Inter', sans-serif; 
+        text-align: center; /* Centered below input */
+    }
+
+    /* Logo Animation */
+    .logo-text-reveal {
+      width: 0; overflow: hidden; white-space: nowrap;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .logo-container:hover .logo-text-reveal { width: max-content; }
+    
+    .help-icon { font-size: 14px; cursor: pointer; color: #52525b; transition: color 0.2s; }
+    .help-icon:hover { color: #facc15; }
+
+    /* Dropdown UI */
+    .dropdown-menu {
+        transform-origin: top left;
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    }
+    .dropdown-item {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 8px 12px; cursor: pointer; color: #d4d4d8; font-size: 0.8rem;
+        transition: background-color 0.1s;
+    }
+    .dropdown-item:hover { background-color: #27272a; }
+    .dropdown-item .trash-icon { opacity: 0; transition: opacity 0.1s; font-size: 16px; color: #71717a; }
+    .dropdown-item:hover .trash-icon { opacity: 1; }
+    .dropdown-item .trash-icon:hover { color: #ef4444; }
+
+    /* Utilities */
+    .show-mobile { display: block; }
+    .show-desktop { display: none; }
+    @media (min-width: 768px) {
+        .show-mobile { display: none; }
+        .show-desktop { display: block; }
+    }
+</style>
+<script>
+// Custom Slider Web Component (Mobile Only)
+const sliderTemplate = document.createElement("template");
+sliderTemplate.innerHTML = `
+    <style>
+        :host {
+            font: inherit;
+            color: inherit;
+            display: block;
+            --sl-highlight-color: #facc15;
+            --sl-track-color: #3f3f46;
+            --sl-value-box-bg: #27272a;
+        }
+        .slider-container { display: flex; align-items: center; gap: 12px; width: 100%; }
+        .value-box-container {
+            position: relative; width: 5em; height: 2.5em; overflow: hidden; 
+            border-radius: 8px; flex-shrink: 0; border: 1px solid #3f3f46;
+        }
+        .value-box-container:focus-within { border-color: var(--sl-highlight-color); }
+        .value-box {
+            width: 100%; height: 100%; background-color: var(--sl-value-box-bg);
+            border: none; color: var(--sl-highlight-color, currentColor);
+            font: inherit; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+            text-align: center; outline: none; box-sizing: border-box; -moz-appearance: textfield; padding: 0 4px;
+        }
+        .value-box::-webkit-outer-spin-button, .value-box::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .slider {
+            flex: 1; -webkit-appearance: none; appearance: none; width: 100%; height: 6px;
+            background-color: var(--sl-track-color); border-radius: 3px; outline: none; cursor: pointer;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none; width: 1.4em; height: 1.4em;
+            background-color: var(--sl-highlight-color, currentColor); border-radius: 50%;
+            border: 2px solid #09090b; transition: transform 0.15s ease-in-out; cursor: pointer;
+        }
+    </style>
+    <div class="slider-container">
+        <input type="range" id="slider" class="slider">
+        <div class="value-box-container" id="value-box-container">
+            <input type="number" id="sliderValue" class="value-box">
+        </div>
+    </div>
+`;
+class CustomSlider extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(sliderTemplate.content.cloneNode(true));
+    this.slider = this.shadowRoot.getElementById("slider");
+    this.sliderValue = this.shadowRoot.getElementById("sliderValue");
+    this._bindEventHandlers();
+  }
+  static get observedAttributes() { return ["min", "max", "value"]; }
+  connectedCallback() { this._addEventListeners(); this._initializeState(); }
+  disconnectedCallback() { this._removeEventListeners(); }
+  attributeChangedCallback(name, oldValue, newValue) { if (oldValue === newValue || !this.slider) return; this._setValue(this.getAttribute("value")); }
+  _initializeState() { this._setValue(this.getAttribute("value") || 50); }
+  _setValue(newValue) {
+    const min = parseFloat(this.getAttribute("min") || 0);
+    const max = parseFloat(this.getAttribute("max") || 100);
+    let value = parseFloat(newValue);
+    if (isNaN(value)) value = min;
+    value = Math.max(min, Math.min(value, max));
+    this.slider.min = min; this.slider.max = max; this.slider.value = value;
+    if (this.shadowRoot.activeElement !== this.sliderValue) { this.sliderValue.value = value; }
+    this.dispatchEvent(new CustomEvent('change', { detail: { value } }));
+    this._updateSliderTrack();
+  }
+  _updateSliderTrack() {
+    const min = parseFloat(this.slider.min);
+    const max = parseFloat(this.slider.max);
+    const value = parseFloat(this.slider.value);
+    const percentage = max === min ? 100 : ((value - min) / (max - min)) * 100;
+    const highlightColor = getComputedStyle(this).getPropertyValue("--sl-highlight-color").trim() || "#facc15";
+    const trackColor = getComputedStyle(this).getPropertyValue("--sl-track-color").trim() || "#3f3f46";
+    this.slider.style.background = `linear-gradient(to right, ${highlightColor} ${percentage}%, ${trackColor} ${percentage}%)`;
+  }
+  _bindEventHandlers() { this._onInput = this._onInput.bind(this); }
+  _addEventListeners() { this.slider.addEventListener("input", this._onInput); this.sliderValue.addEventListener("input", this._onInput); }
+  _removeEventListeners() { this.slider.removeEventListener("input", this._onInput); this.sliderValue.removeEventListener("input", this._onInput); }
+  _onInput(e) { this.setAttribute('value', e.target.value); }
+}
+customElements.define("custom-slider", CustomSlider);
+</script>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-0\.5{margin-top:0.125rem}.mb-2{margin-bottom:0.5rem}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.flex{display:flex}.grid{display:grid}.h-14{height:3.5rem}.h-full{height:100%}.h-\[300px\]{height:300px}.h-\[500px\]{height:500px}.max-h-\[95vh\]{max-height:95vh}.min-h-screen{min-height:100vh}.min-h-\[250px\]{min-height:250px}.min-h-\[600px\]{min-height:600px}.w-1\/3{width:33.333333%}.w-full{width:100%}.w-max{width:max-content}.w-2\/3{width:66.666667%}.w-1\/2{width:50%}.w-14{width:3.5rem}.w-16{width:4rem}.w-\[300px\]{width:300px}.w-\[500px\]{width:500px}.max-w-7xl{max-width:80rem}.flex-shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.-translate-x-1\/3{--tw-translate-x:-33.333333%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-1\/2{--tw-translate-x:50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-1\/3{--tw-translate-y:33.333333%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-6{gap:1.5rem}.gap-1{gap:0.25rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded-3xl{border-radius:1.5rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-zinc-800{--tw-border-opacity:1;border-color:rgb(39 39 42 / var(--tw-border-opacity, 1))}.bg-\[\#09090b\]{--tw-bg-opacity:1;background-color:rgb(9 9 11 / var(--tw-bg-opacity, 1))}.bg-\[\#121214\]{--tw-bg-opacity:1;background-color:rgb(18 18 20 / var(--tw-bg-opacity, 1))}.bg-green-500\/5{background-color:rgb(34 197 94 / 0.05)}.bg-yellow-500\/5{background-color:rgb(234 179 8 / 0.05)}.bg-zinc-800\/50{background-color:rgb(39 39 42 / 0.5)}.bg-zinc-900\/30{background-color:rgb(24 24 27 / 0.3)}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-5{padding:1.25rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.pl-2{padding-left:0.5rem}.pt-4{padding-top:1rem}.pl-10{padding-left:2.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-\[6px\]{font-size:6px}.text-\[9px\]{font-size:9px}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[12px\]{font-size:12px}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-500{--tw-text-opacity:1;color:rgb(234 179 8 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-zinc-400{--tw-text-opacity:1;color:rgb(161 161 170 / var(--tw-text-opacity, 1))}.text-zinc-500{--tw-text-opacity:1;color:rgb(113 113 122 / var(--tw-text-opacity, 1))}.text-zinc-600{--tw-text-opacity:1;color:rgb(82 82 91 / var(--tw-text-opacity, 1))}.opacity-50{opacity:0.5}.opacity-70{opacity:0.7}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-\[100px\]{--tw-blur:blur(100px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-\[80px\]{--tw-blur:blur(80px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:p-6{padding:1.5rem}.sm\:p-8{padding:2rem}}@media (min-width: 1024px){.lg\:w-5\/12{width:41.666667%}.lg\:w-7\/12{width:58.333333%}.lg\:flex-row{flex-direction:row}.lg\:border-b-0{border-bottom-width:0px}.lg\:border-r{border-right-width:1px}}</style></head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6" onclick="closeTooltips(event)">
+<!-- Info Tooltips -->
+<div class="info-tooltip" id="tip-income" onmouseenter="clearHideTimeout()" onmouseleave="startHideTimeout('tip-income')">
+    Your annual take-home pay after all taxes and deductions.
+</div>
+<div class="info-tooltip" id="tip-swr" onmouseenter="clearHideTimeout()" onmouseleave="startHideTimeout('tip-swr')">
+    Defaults to 4% safe withdrawal rate based on 30 years retirement, 3.5% for 40, and 3% for 50+. 
+    4% is successful in 95% of all 25 year, and 84% of all 55 year retirements. 
+    <br><br>
+<a href="https://www.reddit.com/r/Fire/comments/189tlkg/safe_withdraw_rate_if_retire_at_mid_30s/" target="_blank">More Info</a>
+</div>
+<div class="info-tooltip" id="tip-growth" onmouseenter="clearHideTimeout()" onmouseleave="startHideTimeout('tip-growth')">
+    Defaults to MMM 5% real. Historical S&amp;P long term rates are 8-10% annually, 6-7% inflation adjusted.
+    <br><br>
+<a href="https://www.mrmoneymustache.com/2011/06/06/dude-wheres-my-7-investment-return/" target="_blank">Read Article</a>
+</div>
+<div class="glass-card w-full max-w-7xl rounded-3xl overflow-hidden flex flex-col lg:flex-row relative bg-[#121214] border border-zinc-800 shadow-2xl">
+<!-- LEFT PANEL -->
+<div class="w-full lg:w-5/12 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-zinc-800 relative z-10 bg-[#09090b] flex flex-col overflow-y-auto max-h-[95vh]">
+<!-- Header -->
+<div class="mb-6 flex items-center justify-between w-full">
+    <div class="logo-container flex items-center gap-2 cursor-pointer w-max">
+        <span class="material-symbols-outlined text-yellow-500 text-4xl">local_fire_department</span>
+        <h1 class="text-xl font-bold text-white tracking-tight logo-text-reveal">FIRE Calculator</h1>
+    </div>
+    
+    <!-- CONTROLS -->
+    <div class="flex items-center mt-1">
+        <!-- Single Plan State: Just a Plus Button -->
+        <button id="simpleAddBtn" class="text-zinc-500 hover:text-yellow-500 transition-colors p-2 flex items-center justify-center" onclick="addNewPlan()" title="Add another scenario">
+            <span class="material-symbols-outlined text-2xl">add_circle</span>
+        </button>
+
+        <!-- Multi Plan State: The Selector -->
+        <div id="planSelectorContainer" class="hidden relative">
+            <div class="flex items-center gap-2 bg-zinc-900/50 hover:bg-zinc-800/80 px-3 py-1.5 rounded-lg border border-zinc-800/50 transition-colors group">
+                <!-- Name (Editable) -->
+                <span id="currentPlanName" contenteditable="true" class="text-xs font-bold text-zinc-300 hover:text-white outline-none min-w-[30px] cursor-text border-b border-transparent focus:border-yellow-500 transition-colors" onkeydown="handleNameEnter(event)" onblur="savePlanName()">Plan 1</span>
+                <!-- Chevron (Dropdown Trigger) -->
+                <span class="material-symbols-outlined text-zinc-500 text-sm cursor-pointer hover:text-yellow-500" onclick="togglePlanDropdown(event)">expand_more</span>
+            </div>
+            
+            <!-- Dropdown Menu -->
+            <div id="planDropdown" class="dropdown-menu absolute top-full right-0 mt-2 w-48 bg-[#18181b] border border-zinc-800 rounded-lg shadow-xl hidden z-50 flex flex-col">
+                 <div id="planList" class="flex flex-col max-h-48 overflow-y-auto">
+                     <!-- Plan items injected here -->
+                 </div>
+                 <div class="border-t border-zinc-800 p-2">
+                    <button onclick="addNewPlan()" class="w-full text-left px-2 py-1 text-xs font-bold text-yellow-500 hover:text-yellow-400 flex items-center gap-2 rounded hover:bg-zinc-800/50 transition-colors">
+                        <span class="material-symbols-outlined text-sm">add</span> Add Set
+                    </button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- NOW -->
+<div class="mb-8">
+<div class="section-header">Now</div>
+<form class="space-y-6 pl-2" onsubmit="return false;">
+<div class="flex gap-6 w-full">
+<div class="w-1/3">
+<label class="stat-label">Age</label>
+<div class="desktop-input-group show-desktop">
+<input class="input-field draggable" data-step="1" id="inAge" oninput="handleInput(this)" type="text" value="35">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobAge" max="100" min="18" value="35"></custom-slider>
+</div>
+</div>
+<div class="w-2/3">
+<label class="stat-label">Net Worth</label>
+<div class="desktop-input-group show-desktop">
+<input class="input-field draggable" data-money="true" data-step="1000" id="inNetWorth" oninput="handleInput(this)" type="text" value="$372,610">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobNetWorth" max="2000000" min="0" value="372610"></custom-slider>
+</div>
+</div>
+</div>
+<div class="flex gap-6 w-full">
+<div class="flex-grow flex gap-6">
+<div class="w-1/2">
+<label class="stat-label">
+                  After-tax Income
+                  <span class="material-symbols-outlined help-icon" onmouseenter="showTooltip(event, 'tip-income')" onmouseleave="startHideTimeout('tip-income')">help</span>
+</label>
+<div class="desktop-input-group show-desktop">
+<input class="input-field draggable" data-money="true" data-step="1000" id="inIncome" oninput="handleInput(this)" type="text" value="$180,000">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobIncome" max="500000" min="0" value="180000"></custom-slider>
+</div>
+</div>
+<div class="w-1/2">
+<label class="stat-label">Annual Spending</label>
+<div class="desktop-input-group show-desktop">
+<input class="input-field draggable" data-money="true" data-step="1000" id="inSpending" oninput="handleInput(this)" type="text" value="$120,000">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobSpending" max="300000" min="0" value="120000"></custom-slider>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-16 pt-4">
+<div class="relative w-14 h-14">
+<svg class="w-full h-full" viewBox="0 0 36 36">
+<path class="chart-circle chart-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+<path class="chart-circle chart-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" id="pieSavings" stroke-dasharray="33.33333333333333, 100"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-[9px] font-bold text-yellow-400 font-mono" id="piePercent">33%</span>
+<span class="text-[6px] font-bold text-yellow-400 uppercase tracking-widest mt-0.5 whitespace-nowrap">Rate</span>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- RETIREMENT -->
+<div class="flex-grow">
+<div class="section-header"><span>Retirement</span></div>
+<form class="space-y-6 pl-2" onsubmit="return false;">
+<div class="flex gap-6 w-full items-start">
+<div class="w-2/3">
+<label class="stat-label">FI Spend</label>
+<div class="desktop-input-group" id="grpTargetSpend">
+<input class="input-field draggable" data-money="true" data-step="1000" id="inTargetSpend" oninput="handleInput(this)" type="text" value="$120,000">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobTargetSpend" max="300000" min="0" value="153709.02490258604"></custom-slider>
+</div>
+<div class="calc-subtext" id="subtextSpend"></div>
+</div>
+<div class="w-1/3">
+<label class="stat-label">Age</label>
+<div class="desktop-input-group calculated-group" id="grpRetireAge">
+<input class="input-field draggable calculated" data-step="1" id="inRetireAge" oninput="handleInput(this)" type="text" value="49">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobRetireAge" max="100" min="25" value="61"></custom-slider>
+</div>
+<div class="calc-subtext" id="subtextAge">Calculated based on income</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<div class="flex justify-between mb-2">
+<label class="stat-label">
+              FI Withdrawal
+              <span class="material-symbols-outlined help-icon" onmouseenter="showTooltip(event, 'tip-swr')" onmouseleave="startHideTimeout('tip-swr')">help</span>
+</label>
+<span class="text-yellow-400 font-mono text-xs font-bold select-none" id="lblSWR">3.5%</span>
+</div>
+<input class="standard-range" id="inSWR" max="6" min="2" oninput="markSWRManual()" step="0.05" type="range" value="3.5">
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<label class="stat-label">
+              Growth
+              <span class="material-symbols-outlined help-icon" onmouseenter="showTooltip(event, 'tip-growth')" onmouseleave="startHideTimeout('tip-growth')">help</span>
+</label>
+<span class="text-yellow-400 font-mono text-xs font-bold select-none" id="lblReturn">5.0%</span>
+</div>
+<input class="standard-range" id="inReturn" max="12" min="1" step="0.1" type="range" value="5.0">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="stat-label">Additional Income</label>
+<div class="desktop-input-group">
+<input class="input-field draggable" data-money="true" data-step="500" id="inAdditionalIncome" oninput="handleInput(this)" type="text" value="$0">
+</div>
+<div class="show-mobile">
+<custom-slider id="mobAdditionalIncome" max="100000" min="0" value="0"></custom-slider>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="mt-6 text-[10px] text-zinc-600 flex items-center gap-1 opacity-50 show-desktop">
+<span class="material-symbols-outlined text-[12px]">drag_indicator</span>
+<span>Tip: Drag values left/right to adjust</span>
+</div>
+
+</div>
+<!-- RIGHT PANEL -->
+<div class="w-full lg:w-7/12 bg-zinc-900/30 p-6 sm:p-8 flex flex-col relative overflow-hidden self-stretch min-h-[600px]">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 relative z-10">
+<div class="p-5 rounded-2xl border border-zinc-800 bg-[#121214] shadow-xl">
+<label class="stat-label flex items-center gap-1">
+          FIRE Target 
+</label>
+<div class="text-3xl font-mono font-bold text-white mt-2 tracking-tight" id="outFireNumber">$3,428,571</div>
+<div class="text-xs text-zinc-500 mt-2 flex items-center gap-1">
+<span class="text-zinc-400" id="outFireSubtext">$153,709 annually (3.5%)</span>
+</div>
+</div>
+<div class="p-5 rounded-2xl border border-zinc-800 bg-[#121214] shadow-xl relative overflow-hidden group">
+<label class="stat-label" id="lblRightCardTitle">Time to Independence</label>
+<div class="text-4xl font-mono font-bold text-glow-green mt-2" id="outRightCardMain">26y</div>
+<div class="text-xs text-zinc-500 mt-2" id="outRightCardSub">Possible at Age <span class="text-green-400 font-bold">61</span></div>
+</div>
+</div>
+<div class="mb-8 relative z-10">
+<div class="flex justify-between items-end mb-2">
+<label class="stat-label">Progress</label>
+<span class="text-2xl font-mono font-bold text-green-400" id="outPercent">11%</span>
+</div>
+<div class="progress-track w-full mb-2">
+<div class="progress-fill" id="progressBar" style="width: 10.8678%;"></div>
+</div>
+<div class="flex justify-between text-[10px] text-zinc-600 font-mono uppercase">
+<span>Start</span>
+<span>Freedom</span>
+</div>
+</div>
+<div class="relative z-10 mt-auto flex-grow flex flex-col min-h-[250px]">
+<div class="flex justify-between items-end mb-4">
+<label class="stat-label">Net Worth Projection</label>
+</div>
+<div class="timeline-wrapper flex-grow border-b border-zinc-800 relative mb-2" id="timelineWrapper">
+<div class="y-axis" id="yAxisLabels"><span>$11.9M</span><span>$7.9M</span><span>$3.9M</span><span>$0</span></div>
+<div class="timeline-container" id="graphContainer">
+<div id="graphTooltip" style="opacity: 1; left: 182.809px; top: 122.805px;">
+<div class="text-zinc-400 mb-1">Age <span class="text-white font-bold" id="ttYear">Age 58</span></div>
+<div class="text-green-400 font-bold" id="ttVal">$3.6M</div>
+</div>
+<div class="timeline-grid items-end h-full w-full absolute bottom-0" id="timelineGraph"><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 4%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 4%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 4.46728%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 5.19278%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 5.95454%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 6.7544%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 7.59425%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 8.47609%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 9.40202%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 10.3742%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 11.3951%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 12.467%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 13.5924%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 14.7742%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 16.015%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 17.3179%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 18.6859%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 20.1224%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 21.6306%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 23.2143%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 24.8771%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 26.6231%;"></div><div class="timeline-bar" style="background-color: rgb(250, 204, 21); opacity: 0.4; height: 28.4564%;"></div><div class="timeline-bar" style="background-color: rgb(255, 255, 255); opacity: 1; height: 30.3813%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 30.8961%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 31.4367%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 32.0043%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 32.6002%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 33.226%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 33.883%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 34.5729%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 35.2973%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 36.0579%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 36.8565%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 37.6951%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 38.5756%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 39.5001%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 40.4709%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 41.4902%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 42.5604%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 43.6842%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 44.8642%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 46.1031%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 47.404%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 48.7699%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 50.2042%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 51.7101%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 53.2914%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 54.9517%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 56.695%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 58.5255%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 60.4476%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 62.4657%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 64.5847%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 66.8097%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 69.1459%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 71.599%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 74.1747%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 76.8791%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 79.7188%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 82.7005%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 85.8313%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 89.1186%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 92.5703%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 96.1945%;"></div><div class="timeline-bar" style="background-color: rgb(74, 222, 128); opacity: 0.9; height: 100%;"></div></div>
+</div>
+</div>
+<div class="flex justify-between items-start pl-10 text-[10px] text-zinc-600 font-mono">
+<span id="axisStart">35</span><span id="axisMid1">56</span><span id="axisMid2">78</span><span id="axisEnd">100</span>
+</div>
+<div class="flex justify-end mt-2">
+<span class="text-xs font-mono text-zinc-400 bg-zinc-800/50 px-3 py-1 rounded-lg" id="outRunRate">Run Rate: 3.1 Yrs</span>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-yellow-500/5 rounded-full blur-[80px] pointer-events-none translate-y-1/3 -translate-x-1/3"></div>
+</div>
+</div>
+  <!-- Footer -->
+<div class="mt-8 mb-4 text-center text-zinc-600 text-[10px] leading-relaxed px-4 opacity-70">
+    Made by Hans.
+    <br>
+<span class="opacity-50">This tool is for educational purposes only and does not constitute financial advice. Calculations are estimates.</span>
+</div>
+<script>
+    let calcMode = 'solveForAge';
+    let swrManuallySet = false;
+    let tooltipTimeout;
+    
+    // --- Data Persistence & Multi-Set Logic ---
+    let firePlans = [];
+    let currentPlanIndex = 0;
+
+    function initPlans() {
+        const stored = localStorage.getItem('fire_plans_v1');
+        if (stored) {
+            try {
+                firePlans = JSON.parse(stored);
+            } catch(e) { console.error("Failed to parse plans", e); }
+        }
+        
+        if (!firePlans || firePlans.length === 0) {
+            firePlans = [createDefaultPlan('Plan 1')];
+        }
+        
+        // Ensure index is valid
+        if (currentPlanIndex >= firePlans.length) currentPlanIndex = 0;
+        
+        // Call UI update first to set correct elements visibility
+        updateHeaderState();
+        renderPlanList();
+        loadPlan(currentPlanIndex);
+    }
+
+    function createDefaultPlan(name) {
+        return {
+            name: name,
+            data: {
+                age: 35,
+                netWorth: 372610,
+                income: 180000,
+                spending: 120000,
+                targetSpend: 120000,
+                retireAge: 49,
+                swr: 3.5,
+                returnRate: 5.0,
+                addIncome: 0,
+                calcMode: 'solveForAge',
+                swrManual: false
+            }
+        };
+    }
+
+    function updateHeaderState() {
+        const simpleBtn = document.getElementById('simpleAddBtn');
+        const selector = document.getElementById('planSelectorContainer');
+        
+        if (firePlans.length > 1) {
+            simpleBtn.classList.add('hidden');
+            selector.classList.remove('hidden');
+        } else {
+            simpleBtn.classList.remove('hidden');
+            selector.classList.add('hidden');
+        }
+    }
+
+    function serializeCurrentState() {
+        return {
+            age: parseMoney(document.getElementById('inAge').value),
+            netWorth: parseMoney(document.getElementById('inNetWorth').value),
+            income: parseMoney(document.getElementById('inIncome').value),
+            spending: parseMoney(document.getElementById('inSpending').value),
+            targetSpend: parseMoney(document.getElementById('inTargetSpend').value),
+            retireAge: parseMoney(document.getElementById('inRetireAge').value),
+            swr: parseFloat(document.getElementById('inSWR').value),
+            returnRate: parseFloat(document.getElementById('inReturn').value),
+            addIncome: parseMoney(document.getElementById('inAdditionalIncome').value),
+            calcMode: calcMode,
+            swrManual: swrManuallySet
+        };
+    }
+
+    function savePlans() {
+        // Update current plan data before saving
+        firePlans[currentPlanIndex].data = serializeCurrentState();
+        firePlans[currentPlanIndex].name = document.getElementById('currentPlanName').innerText;
+        localStorage.setItem('fire_plans_v1', JSON.stringify(firePlans));
+    }
+
+    function loadPlan(index) {
+        currentPlanIndex = index;
+        const plan = firePlans[index];
+        const d = plan.data;
+
+        document.getElementById('currentPlanName').innerText = plan.name;
+        
+        // Set values (Desktop)
+        document.getElementById('inAge').value = d.age;
+        document.getElementById('inNetWorth').value = formatMoney(d.netWorth);
+        document.getElementById('inIncome').value = formatMoney(d.income);
+        document.getElementById('inSpending').value = formatMoney(d.spending);
+        document.getElementById('inTargetSpend').value = formatMoney(d.targetSpend);
+        document.getElementById('inRetireAge').value = d.retireAge;
+        document.getElementById('inSWR').value = d.swr;
+        document.getElementById('inReturn').value = d.returnRate;
+        document.getElementById('inAdditionalIncome').value = formatMoney(d.addIncome);
+        
+        // Set Global State
+        calcMode = d.calcMode || 'solveForAge';
+        swrManuallySet = d.swrManual || false;
+
+        // Sync Sliders
+        const syncMobile = (mobId, val) => {
+             const slider = document.getElementById(mobId);
+             if(slider) slider.setAttribute('value', val);
+        };
+        syncMobile('mobAge', d.age); syncMobile('mobNetWorth', d.netWorth);
+        syncMobile('mobIncome', d.income); syncMobile('mobSpending', d.spending);
+        syncMobile('mobTargetSpend', d.targetSpend); syncMobile('mobRetireAge', d.retireAge);
+        syncMobile('mobAdditionalIncome', d.addIncome);
+
+        calculateFire();
+        updateHeaderState();
+        renderPlanList(); // Re-render to update selected state styling if added later
+    }
+
+    function addNewPlan() {
+        const newName = `Plan ${firePlans.length + 1}`;
+        firePlans.push(createDefaultPlan(newName));
+        savePlans();
+        renderPlanList();
+        loadPlan(firePlans.length - 1);
+        updateHeaderState();
+    }
+
+    function deletePlan(e, index) {
+        e.stopPropagation(); // Prevent loading the plan we are deleting
+        if (firePlans.length <= 1) {
+            return;
+        }
+        
+        if (confirm(`Delete "${firePlans[index].name}"?`)) {
+            firePlans.splice(index, 1);
+            if (currentPlanIndex >= firePlans.length) {
+                currentPlanIndex = firePlans.length - 1;
+            }
+            savePlans(); 
+            renderPlanList();
+            loadPlan(currentPlanIndex);
+        }
+    }
+
+    function renderPlanList() {
+        const list = document.getElementById('planList');
+        list.innerHTML = '';
+        firePlans.forEach((plan, idx) => {
+            const item = document.createElement('div');
+            item.className = `dropdown-item ${idx === currentPlanIndex ? 'text-yellow-500 font-bold bg-zinc-800/50' : ''}`;
+            item.onclick = () => { loadPlan(idx); togglePlanDropdown(); };
+            
+            const nameSpan = document.createElement('span');
+            nameSpan.innerText = plan.name;
+            item.appendChild(nameSpan);
+
+            // Trash Icon (Only show if more than 1 plan)
+            if (firePlans.length > 1) {
+                const trash = document.createElement('span');
+                trash.className = 'material-symbols-outlined trash-icon';
+                trash.innerText = 'delete';
+                trash.onclick = (e) => deletePlan(e, idx);
+                item.appendChild(trash);
+            }
+            
+            list.appendChild(item);
+        });
+    }
+
+    function togglePlanDropdown(e) {
+        if(e) e.stopPropagation();
+        const dd = document.getElementById('planDropdown');
+        dd.classList.toggle('hidden');
+    }
+
+    function handleNameEnter(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('currentPlanName').blur();
+        }
+    }
+
+    function savePlanName() {
+        savePlans();
+        renderPlanList();
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const dd = document.getElementById('planDropdown');
+        const trigger = document.getElementById('planSelectorContainer');
+        if (!dd.classList.contains('hidden') && !trigger.contains(e.target)) {
+            dd.classList.add('hidden');
+        }
+    });
+
+
+    // --- Existing Logic ---
+    function showTooltip(e, id) {
+        clearHideTimeout();
+        document.querySelectorAll('.info-tooltip').forEach(el => el.classList.remove('active'));
+        const tip = document.getElementById(id);
+        const icon = e.target;
+        const rect = icon.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2 + window.scrollX;
+        const topY = rect.bottom + window.scrollY + 10;
+        tip.style.left = centerX + "px";
+        tip.style.top = topY + "px";
+        tip.classList.add('active');
+    }
+    function startHideTimeout(id) {
+        tooltipTimeout = setTimeout(() => { document.getElementById(id).classList.remove('active'); }, 300);
+    }
+    function clearHideTimeout() { if(tooltipTimeout) clearTimeout(tooltipTimeout); }
+    function closeTooltips(e) {
+        if(e.target.closest('.info-tooltip') || e.target.closest('.help-icon')) return;
+        document.querySelectorAll('.info-tooltip').forEach(el => el.classList.remove('active'));
+    }
+    function markSWRManual() { swrManuallySet = true; calculateFire(); }
+
+    const parseMoney = (str) => parseFloat(str?.toString().replace(/[^0-9.-]+/g,"")) || 0;
+    const formatMoney = (num) => new Intl.NumberFormat('en-US', {style:'currency', currency:'USD', maximumFractionDigits:0}).format(num);
+    const formatShortMoney = (num) => {
+        if(num >= 1000000) return '$' + (num/1000000).toFixed(1) + 'M';
+        if(num >= 1000) return '$' + (num/1000).toFixed(0) + 'k';
+        return '$' + num.toFixed(0);
+    }
+    function handleInput(el) {
+        if(el.dataset.money === "true") {
+            const cursorPosition = el.selectionStart;
+            const originalLen = el.value.length;
+            const cleanVal = parseMoney(el.value);
+            const formatted = formatMoney(cleanVal);
+            el.value = formatted;
+            const newLen = formatted.length;
+            el.selectionStart = el.selectionEnd = cursorPosition + (newLen - originalLen);
+        }
+        calculateFire(el);
+    }
+
+    // Default graph tooltip state
+    let defaultTooltipData = null;
+    let defaultTooltipBar = null;
+
+    function calculateFire(sourceElement) {
+      if (sourceElement) {
+          if (sourceElement.id === 'inTargetSpend' || sourceElement.id === 'mobTargetSpend') calcMode = 'solveForAge';
+          else if (sourceElement.id === 'inRetireAge' || sourceElement.id === 'mobRetireAge') calcMode = 'solveForSpend';
+      }
+      if (sourceElement && sourceElement.tagName === 'CUSTOM-SLIDER') {
+          const map = {
+             'mobAge': 'inAge', 'mobNetWorth': 'inNetWorth', 'mobIncome': 'inIncome',
+             'mobSpending': 'inSpending', 'mobTargetSpend': 'inTargetSpend',
+             'mobRetireAge': 'inRetireAge', 'mobAdditionalIncome': 'inAdditionalIncome'
+          };
+          const desktopId = map[sourceElement.id];
+          if(desktopId) {
+              const val = parseFloat(sourceElement.getAttribute('value'));
+              const el = document.getElementById(desktopId);
+              el.value = el.dataset.money === "true" ? formatMoney(val) : val;
+          }
+      }
+
+      const currentAge = parseMoney(document.getElementById('inAge').value);
+      const currentNetWorth = parseMoney(document.getElementById('inNetWorth').value);
+      const income = parseMoney(document.getElementById('inIncome').value);
+      const spending = parseMoney(document.getElementById('inSpending').value);
+      const addIncome = parseMoney(document.getElementById('inAdditionalIncome').value);
+      const returnRate = parseFloat(document.getElementById('inReturn').value) / 100;
+      let swr = parseFloat(document.getElementById('inSWR').value) / 100;
+      const elTargetSpend = document.getElementById('inTargetSpend');
+      const elRetireAge = document.getElementById('inRetireAge');
+
+      document.getElementById('lblReturn').textContent = (returnRate * 100).toFixed(1) + '%';
+      
+      const savings = income - spending;
+      let savingsRate = income > 0 ? (savings / income) : 0;
+      if(savingsRate < 0) savingsRate = 0; if(savingsRate > 1) savingsRate = 1;
+      
+      const pieCircle = document.getElementById('pieSavings');
+      pieCircle.setAttribute('stroke-dasharray', `${savingsRate * 100}, 100`);
+      document.getElementById('piePercent').textContent = (savingsRate * 100).toFixed(0) + '%';
+
+      let targetSpendVal, retireAgeVal, fireNumber;
+      for(let iter=0; iter<2; iter++) {
+          let simNW = currentNetWorth;
+          const maxSim = 80;
+          if (calcMode === 'solveForAge') {
+              targetSpendVal = parseMoney(elTargetSpend.value);
+              let netTarget = targetSpendVal - addIncome;
+              if(netTarget < 0) netTarget = 0;
+              fireNumber = netTarget / swr;
+              let yearsToFI = 0;
+              if(currentNetWorth >= fireNumber) { yearsToFI = 0; } 
+              else {
+                  simNW = currentNetWorth;
+                  for(let i=1; i<=maxSim; i++) {
+                      simNW = (simNW * (1+returnRate)) + savings;
+                      if(simNW >= fireNumber) { yearsToFI = i; break; }
+                      if(i===maxSim) yearsToFI = maxSim;
+                  }
+              }
+              retireAgeVal = currentAge + yearsToFI;
+              if(sourceElement !== elRetireAge) elRetireAge.value = retireAgeVal;
+              updateUIState('solveForAge', fireNumber, yearsToFI, retireAgeVal);
+          } else {
+              retireAgeVal = parseMoney(elRetireAge.value);
+              let yearsToFI = retireAgeVal - currentAge;
+              if(yearsToFI < 0) yearsToFI = 0;
+              simNW = currentNetWorth;
+              for(let i=0; i<yearsToFI; i++) {
+                  simNW = (simNW * (1+returnRate)) + savings;
+              }
+              fireNumber = simNW; 
+              targetSpendVal = (fireNumber * swr) + addIncome;
+              if(sourceElement !== elTargetSpend) elTargetSpend.value = formatMoney(targetSpendVal);
+              updateUIState('solveForSpend', fireNumber, targetSpendVal, retireAgeVal);
+          }
+          if (!swrManuallySet) {
+              const yearsInRetirement = 100 - retireAgeVal;
+              let suggestedSWR = 0.04; 
+              if (yearsInRetirement >= 50) suggestedSWR = 0.03;
+              else if (yearsInRetirement >= 35) suggestedSWR = 0.035;
+              if (Math.abs(swr - suggestedSWR) > 0.001) {
+                  swr = suggestedSWR;
+                  document.getElementById('inSWR').value = (swr * 100).toFixed(2);
+              } else { break; }
+          } else { break; }
+      }
+      
+      document.getElementById('lblSWR').textContent = (swr * 100).toFixed(1) + '%';
+      document.getElementById('outFireSubtext').textContent = `${formatMoney(targetSpendVal)} annually (${(swr*100).toFixed(1)}%)`;
+      const syncMobile = (mobId, val) => {
+         if(!sourceElement || sourceElement.id !== mobId) {
+             const slider = document.getElementById(mobId);
+             if(slider) slider.setAttribute('value', val);
+         }
+      };
+      syncMobile('mobAge', currentAge); syncMobile('mobNetWorth', currentNetWorth);
+      syncMobile('mobIncome', income); syncMobile('mobSpending', spending);
+      syncMobile('mobTargetSpend', targetSpendVal); syncMobile('mobRetireAge', retireAgeVal);
+      syncMobile('mobAdditionalIncome', addIncome);
+      
+      // SAVE STATE ON CALCULATION
+      if(firePlans.length > 0) {
+        firePlans[currentPlanIndex].data = serializeCurrentState();
+        localStorage.setItem('fire_plans_v1', JSON.stringify(firePlans));
+      }
+
+      const timelineData = [];
+      let simNW = currentNetWorth;
+      let netTarget = targetSpendVal - addIncome;
+      const yearsToSimulate = 100 - currentAge; 
+      let transitionIndex = -1;
+
+      for(let i = 0; i <= yearsToSimulate; i++) {
+        const currentSimAge = currentAge + i;
+        const isRetired = currentSimAge >= retireAgeVal;
+        if (isRetired && transitionIndex === -1) transitionIndex = i;
+        timelineData.push({ year: i, age: currentSimAge, nw: simNW, isRetired: isRetired });
+        let change = isRetired ? (simNW * returnRate) - netTarget : (simNW * returnRate) + savings;
+        simNW += change;
+      }
+      
+      const runRate = spending > 0 ? (currentNetWorth / spending) : 0;
+      document.getElementById('outRunRate').textContent = `Run Rate: ${runRate.toFixed(1)} Yrs`;
+      document.getElementById('outFireNumber').textContent = formatMoney(fireNumber);
+      const range = 100 - currentAge;
+      document.getElementById('axisStart').textContent = currentAge;
+      document.getElementById('axisMid1').textContent = Math.round(currentAge + range*0.33);
+      document.getElementById('axisMid2').textContent = Math.round(currentAge + range*0.66);
+      document.getElementById('axisEnd').textContent = 100;
+      const percent = fireNumber > 0 ? Math.min(100, Math.max(0, (currentNetWorth / fireNumber) * 100)) : 100;
+      document.getElementById('outPercent').textContent = percent.toFixed(0) + '%';
+      document.getElementById('progressBar').style.width = percent + '%';
+
+      drawGraph(timelineData, fireNumber, transitionIndex);
+    }
+
+    function updateUIState(mode, fireNum, primaryMetric, secondaryMetric) {
+        const subSpend = document.getElementById('subtextSpend');
+        const subAge = document.getElementById('subtextAge');
+        const grpSpend = document.getElementById('grpTargetSpend');
+        const grpAge = document.getElementById('grpRetireAge');
+        const inpSpend = document.getElementById('inTargetSpend');
+        const inpAge = document.getElementById('inRetireAge');
+        const cardTitle = document.getElementById('lblRightCardTitle');
+        const cardMain = document.getElementById('outRightCardMain');
+        const cardSub = document.getElementById('outRightCardSub');
+        if (mode === 'solveForAge') {
+            subSpend.textContent = ""; subAge.textContent = "Calculated based on income";
+            grpSpend.classList.remove('calculated-group'); inpSpend.classList.remove('calculated');
+            grpAge.classList.add('calculated-group'); inpAge.classList.add('calculated');
+            cardTitle.textContent = "Time to Independence";
+            const yrs = primaryMetric;
+            cardMain.textContent = (yrs >= 80) ? "> 80y" : (yrs === 0 ? "ACHIEVED" : Math.round(yrs) + "y");
+            cardSub.innerHTML = `Possible at Age <span class="text-green-400 font-bold">${secondaryMetric}</span>`;
+        } else {
+            subAge.textContent = ""; subSpend.textContent = "Calculated based on age";
+            grpAge.classList.remove('calculated-group'); inpAge.classList.remove('calculated');
+            grpSpend.classList.add('calculated-group'); inpSpend.classList.add('calculated');
+            cardTitle.textContent = "Income at FI";
+            cardMain.textContent = formatShortMoney(primaryMetric);
+            cardSub.innerHTML = `Based on FI at Age <span class="text-green-400 font-bold">${secondaryMetric}</span>`;
+        }
+    }
+
+    function displayGraphTooltip(bar, d, rectOverride = null) {
+        const tooltip = document.getElementById('graphTooltip');
+        const container = document.getElementById('graphContainer');
+        let rect;
+        if (rectOverride) rect = rectOverride; else if (bar) rect = bar.getBoundingClientRect(); else return;
+        const containerRect = container.getBoundingClientRect();
+        tooltip.style.opacity = '1';
+        tooltip.style.left = (rect.left - containerRect.left + rect.width/2) + 'px';
+        tooltip.style.top = (rect.top - containerRect.top) + 'px';
+        document.getElementById('ttYear').textContent = `Age ${d.age}`;
+        document.getElementById('ttVal').textContent = formatShortMoney(d.nw);
+        if (bar) { bar.style.opacity = '1'; bar.style.backgroundColor = '#fff'; }
+    }
+
+    function drawGraph(data, fireNum, transitionIndex) {
+        const container = document.getElementById('timelineGraph');
+        const wrapper = document.getElementById('timelineWrapper');
+        container.innerHTML = '';
+        const yAxis = document.getElementById('yAxisLabels');
+        const peak = Math.max(...data.map(d => d.nw));
+        const maxVal = Math.max(fireNum * 1.2, peak, 10000);
+        yAxis.innerHTML = `<span>${formatShortMoney(maxVal)}</span><span>${formatShortMoney(maxVal*0.66)}</span><span>${formatShortMoney(maxVal*0.33)}</span><span>$0</span>`;
+        defaultTooltipData = null; defaultTooltipBar = null;
+
+        data.forEach((d, idx) => {
+            const bar = document.createElement('div');
+            // Yellow Accumulation, Green Retirement
+            let bg = d.isRetired ? '#4ade80' : '#facc15'; 
+            if (d.nw < 0) bg = '#ef4444';
+            bar.className = 'timeline-bar';
+            bar.style.backgroundColor = bg;
+            bar.style.opacity = d.isRetired ? '0.9' : '0.4';
+            let h = (d.nw / maxVal) * 100;
+            bar.style.height = `${Math.max(Math.min(h, 100), 4)}%`;
+
+            if (idx === transitionIndex || (transitionIndex === -1 && idx === data.length-1)) {
+                defaultTooltipBar = bar; defaultTooltipData = d;
+            } else if (transitionIndex === 0 && idx === 0) {
+                 defaultTooltipBar = bar; defaultTooltipData = d;
+            }
+
+            bar.addEventListener('mouseenter', () => {
+                if(defaultTooltipBar) {
+                    // Reset default bar visual to normal state
+                    defaultTooltipBar.style.backgroundColor = defaultTooltipData.isRetired ? '#4ade80' : '#facc15';
+                    defaultTooltipBar.style.opacity = defaultTooltipData.isRetired ? '0.9' : '0.4';
+                }
+                displayGraphTooltip(bar, d);
+            });
+            bar.addEventListener('mouseleave', () => {
+                 const tooltip = document.getElementById('graphTooltip');
+                 tooltip.style.opacity = '0';
+                 bar.style.backgroundColor = bg;
+                 bar.style.opacity = d.isRetired ? '0.9' : '0.4';
+            });
+            container.appendChild(bar);
+        });
+        if (defaultTooltipBar) displayGraphTooltip(defaultTooltipBar, defaultTooltipData);
+    }
+
+    document.getElementById('timelineWrapper').addEventListener('mouseleave', () => {
+        if(defaultTooltipBar && defaultTooltipData) displayGraphTooltip(defaultTooltipBar, defaultTooltipData);
+    });
+
+    const setupDraggableInputs = () => {
+        let isDragging = false, startX = 0, startValue = 0, activeInput = null;
+        document.querySelectorAll('.draggable').forEach(input => {
+            input.addEventListener('mousedown', (e) => {
+                isDragging = true; startX = e.clientX; startValue = parseMoney(input.value); activeInput = input;
+                document.body.style.cursor = 'ew-resize';
+            });
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging || !activeInput) return;
+            const delta = e.clientX - startX;
+            if(Math.abs(delta) < 2) return;
+            e.preventDefault();
+            const step = parseFloat(activeInput.dataset.step) || 1;
+            const isMoney = activeInput.dataset.money === "true";
+            let multiplier = 0.1;
+            if (isMoney) {
+                if(activeInput.id === 'inTargetSpend') multiplier = startValue > 1000000 ? 50 : (startValue > 100000 ? 10 : 0.5);
+                else multiplier = startValue > 1000000 ? 100 : (startValue > 100000 ? 20 : 1);
+            }
+            let val = Math.max(0, startValue + delta * step * multiplier);
+            val = isMoney ? Math.round(val/100)*100 : Math.round(val);
+            activeInput.value = isMoney ? formatMoney(val) : val;
+            calculateFire(activeInput);
+        });
+        document.addEventListener('mouseup', () => { isDragging = false; activeInput = null; document.body.style.cursor = ''; });
+    };
+    
+    document.querySelectorAll('custom-slider').forEach(el => { el.addEventListener('change', (e) => calculateFire(el)); });
+    document.querySelectorAll('input').forEach(el => {
+        if(el.type !== 'range' && !el.hasAttribute('oninput')) el.addEventListener('input', (e) => calculateFire(e.target));
+        if(el.type === 'text') el.addEventListener('blur', () => {
+            const val = parseMoney(el.value);
+            if(el.dataset.money === "true") el.value = formatMoney(val);
+            calculateFire(el);
+        });
+    });
+    
+    document.getElementById('inReturn').addEventListener('input', () => calculateFire());
+    setupDraggableInputs();
+    
+    // Initialize Plans instead of direct calculateFire
+    initPlans();
+</script>
+
+</body></html>
