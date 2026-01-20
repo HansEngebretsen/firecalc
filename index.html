@@ -794,7 +794,11 @@ customElements.define("custom-slider", CustomSlider);
     let defaultTooltipData = null;
     let defaultTooltipBar = null;
 
+    let isCalculating = false;
     function calculateFire(sourceElement) {
+      if(isCalculating) return;
+      isCalculating = true;
+      try {
       if (sourceElement) {
           if (sourceElement.id === 'inTargetSpend' || sourceElement.id === 'mobTargetSpend') calcMode = 'solveForAge';
           else if (sourceElement.id === 'inRetireAge' || sourceElement.id === 'mobRetireAge') calcMode = 'solveForSpend';
@@ -823,6 +827,34 @@ customElements.define("custom-slider", CustomSlider);
       const elTargetSpend = document.getElementById('inTargetSpend');
       const elRetireAge = document.getElementById('inRetireAge');
 
+      // Update Slider Bounds Dynamically
+      const minSpend = 5000;
+      const maxSpend = Math.max(minSpend, spending * 3);
+      const mobTarget = document.getElementById('mobTargetSpend');
+      if(mobTarget) {
+          mobTarget.setAttribute('min', minSpend);
+          mobTarget.setAttribute('max', maxSpend);
+      }
+      const mobRetire = document.getElementById('mobRetireAge');
+      if(mobRetire) {
+          mobRetire.setAttribute('min', currentAge);
+      }
+
+      // Enforce Constraints on Active Inputs
+      if (calcMode === 'solveForAge' && (sourceElement === elTargetSpend || sourceElement?.id === 'mobTargetSpend')) {
+          let val = parseMoney(elTargetSpend.value);
+          if (val < minSpend) val = minSpend;
+          if (val > maxSpend) val = maxSpend;
+          if(val !== parseMoney(elTargetSpend.value)) elTargetSpend.value = formatMoney(val);
+          if(mobTarget) mobTarget.setAttribute('value', val);
+      }
+      if (calcMode === 'solveForSpend' && (sourceElement === elRetireAge || sourceElement?.id === 'mobRetireAge')) {
+          let val = parseMoney(elRetireAge.value);
+          if (val < currentAge) val = currentAge;
+          if(val !== parseMoney(elRetireAge.value)) elRetireAge.value = val;
+          if(mobRetire) mobRetire.setAttribute('value', val);
+      }
+
       document.getElementById('lblReturn').textContent = (returnRate * 100).toFixed(1) + '%';
       
       const savings = income - spending;
@@ -834,50 +866,39 @@ customElements.define("custom-slider", CustomSlider);
       document.getElementById('piePercent').textContent = (savingsRate * 100).toFixed(0) + '%';
 
       let targetSpendVal, retireAgeVal, fireNumber;
-      for(let iter=0; iter<2; iter++) {
-          let simNW = currentNetWorth;
-          const maxSim = 80;
-          if (calcMode === 'solveForAge') {
-              targetSpendVal = parseMoney(elTargetSpend.value);
-              let netTarget = targetSpendVal - addIncome;
-              if(netTarget < 0) netTarget = 0;
-              fireNumber = netTarget / swr;
-              let yearsToFI = 0;
-              if(currentNetWorth >= fireNumber) { yearsToFI = 0; } 
-              else {
-                  simNW = currentNetWorth;
-                  for(let i=1; i<=maxSim; i++) {
-                      simNW = (simNW * (1+returnRate)) + savings;
-                      if(simNW >= fireNumber) { yearsToFI = i; break; }
-                      if(i===maxSim) yearsToFI = maxSim;
-                  }
-              }
-              retireAgeVal = currentAge + yearsToFI;
-              if(sourceElement !== elRetireAge) elRetireAge.value = retireAgeVal;
-              updateUIState('solveForAge', fireNumber, yearsToFI, retireAgeVal);
-          } else {
-              retireAgeVal = parseMoney(elRetireAge.value);
-              let yearsToFI = retireAgeVal - currentAge;
-              if(yearsToFI < 0) yearsToFI = 0;
+      
+      let simNW = currentNetWorth;
+      const maxSim = 80;
+      if (calcMode === 'solveForAge') {
+          targetSpendVal = parseMoney(elTargetSpend.value);
+          let netTarget = targetSpendVal - addIncome;
+          if(netTarget < 0) netTarget = 0;
+          fireNumber = netTarget / swr;
+          let yearsToFI = 0;
+          if(currentNetWorth >= fireNumber) { yearsToFI = 0; } 
+          else {
               simNW = currentNetWorth;
-              for(let i=0; i<yearsToFI; i++) {
+              for(let i=1; i<=maxSim; i++) {
                   simNW = (simNW * (1+returnRate)) + savings;
+                  if(simNW >= fireNumber) { yearsToFI = i; break; }
+                  if(i===maxSim) yearsToFI = maxSim;
               }
-              fireNumber = simNW; 
-              targetSpendVal = (fireNumber * swr) + addIncome;
-              if(sourceElement !== elTargetSpend) elTargetSpend.value = formatMoney(targetSpendVal);
-              updateUIState('solveForSpend', fireNumber, targetSpendVal, retireAgeVal);
           }
-          if (!swrManuallySet) {
-              const yearsInRetirement = 100 - retireAgeVal;
-              let suggestedSWR = 0.04; 
-              if (yearsInRetirement >= 50) suggestedSWR = 0.03;
-              else if (yearsInRetirement >= 35) suggestedSWR = 0.035;
-              if (Math.abs(swr - suggestedSWR) > 0.001) {
-                  swr = suggestedSWR;
-                  document.getElementById('inSWR').value = (swr * 100).toFixed(2);
-              } else { break; }
-          } else { break; }
+          retireAgeVal = currentAge + yearsToFI;
+          if(sourceElement !== elRetireAge) elRetireAge.value = retireAgeVal;
+          updateUIState('solveForAge', fireNumber, yearsToFI, retireAgeVal);
+      } else {
+          retireAgeVal = parseMoney(elRetireAge.value);
+          let yearsToFI = retireAgeVal - currentAge;
+          if(yearsToFI < 0) yearsToFI = 0;
+          simNW = currentNetWorth;
+          for(let i=0; i<yearsToFI; i++) {
+              simNW = (simNW * (1+returnRate)) + savings;
+          }
+          fireNumber = simNW; 
+          targetSpendVal = (fireNumber * swr) + addIncome;
+          if(sourceElement !== elTargetSpend) elTargetSpend.value = formatMoney(targetSpendVal);
+          updateUIState('solveForSpend', fireNumber, targetSpendVal, retireAgeVal);
       }
       
       document.getElementById('lblSWR').textContent = (swr * 100).toFixed(1) + '%';
@@ -900,7 +921,7 @@ customElements.define("custom-slider", CustomSlider);
       }
 
       const timelineData = [];
-      let simNW = currentNetWorth;
+      simNW = currentNetWorth;
       let netTarget = targetSpendVal - addIncome;
       const yearsToSimulate = 100 - currentAge; 
       let transitionIndex = -1;
@@ -927,6 +948,7 @@ customElements.define("custom-slider", CustomSlider);
       document.getElementById('progressBar').style.width = percent + '%';
 
       drawGraph(timelineData, fireNumber, transitionIndex);
+      } finally { isCalculating = false; }
     }
 
     function updateUIState(mode, fireNum, primaryMetric, secondaryMetric) {
