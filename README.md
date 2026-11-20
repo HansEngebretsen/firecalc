@@ -1,6 +1,6 @@
 # `firecalc`
 
-A FIRE calculator you play with rather than fill out. Drag your numbers and watch your financial independence age, target and projection move.
+Can you retire tomorrow? Play with the numbers. Drag your numbers and watch your financial independence age, target and projection move.
 
 
 <div align="center">
